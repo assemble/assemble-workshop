@@ -1,0 +1,13 @@
+# {{title}}
+
+{% body %}
+
+---
+All articles:
+<ul>
+	{{#each articles}}
+		<li>
+			{{data.title}} - {{data.abstract}}
+		</li>
+	{{/each}}
+</ul>

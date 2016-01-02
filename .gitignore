@@ -1,0 +1,7 @@
+.idea/
+.vscode/
+node_modules/
+npm-debug.log
+test/**/.build
+todo.md
+/**/.build
