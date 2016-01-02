@@ -2,6 +2,7 @@
 
 **Purpose of this recipe**
 
-- Create a collection ("articles")
-	- Render each file in the collection
-	- Iterate over all files in the collection and add the output to each file ("List of articles")
+- Create a two collections, `articles` and `pages`
+	- Render each file in the collections
+	- Make the collections available for all files
+	- Create a list in each file, containing a list using the own and the other collection ("List of all pages", "List of all articles")

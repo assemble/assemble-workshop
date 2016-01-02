@@ -5,14 +5,10 @@ var path = require( 'path' );
 
 var app = assemble();
 
-//app.option( 'renameKey', function ( fp ) {
-//	return path.basename( fp, path.extname( fp ) );
-//} );
-
 app.create( 'articles' );
-app.create( 'pages' );
+// No need to create the collection pages; `pages` is a default collection in assemble
 
-app.task( 'load', function ( cb ) {
+app.task( 'init', function ( cb ) {
 	app.helper( 'ctx', path.join( __dirname, './helpers/ctx.js' ) );
 	app.layouts( path.join( __dirname, './templates/layouts/*.hbs' ) );
 	app.articles( path.join( __dirname, './content/articles/**/*.{md,hbs}' ) );
@@ -26,7 +22,7 @@ app.preRender( /./, function ( view, next ) {
 	next();
 } );
 
-app.task( 'content:articles', ['load'], function () {
+app.task( 'content:articles', ['init'], function () {
 	return app.toStream( 'articles' )
 		.on( 'err', console.error )
 		.pipe( app.renderFile() )
@@ -35,7 +31,7 @@ app.task( 'content:articles', ['load'], function () {
 		.pipe( app.dest( path.join( __dirname, './.build' ) ) );
 } );
 
-app.task( 'content:pages', ['load'], function () {
+app.task( 'content:pages', ['init'], function () {
 	return app.toStream( 'pages' )
 		.on( 'err', console.error )
 		.pipe( app.renderFile() )
@@ -45,13 +41,5 @@ app.task( 'content:pages', ['load'], function () {
 } );
 
 app.task( 'default', ['content:articles', 'content:pages']);
-
-app.build( 'default', function ( err ) {
-	if ( err ) {
-		console.error( err )
-	} else {
-		//console.log( 'done' );
-	}
-} );
 
 module.exports = app;
