@@ -1,4 +1,4 @@
-## Work with collections
+## Working with collections
 
 **Purpose of this recipe**
 

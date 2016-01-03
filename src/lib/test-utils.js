@@ -1,8 +1,8 @@
 'use strict';
-var del = require('del');
-var path = require('path');
+var del = require( 'del' );
+var path = require( 'path' );
 
-function clean( delPath, cb ) {
+function clean ( delPath, cb ) {
 	del( delPath )
 		.then( function () {
 			cb();

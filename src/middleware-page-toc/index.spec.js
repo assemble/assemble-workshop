@@ -9,7 +9,7 @@ var utils = require( './../lib/test-utils' );
 chai.use( chaiFs );
 var app = require( './index' );
 
-describe.only( 'Plugin Page-TOC', function () {
+describe( 'Plugin Page-TOC', function () {
 
 	var delPath = path.join( __dirname, './.build' );
 	beforeEach( function ( cb ) {

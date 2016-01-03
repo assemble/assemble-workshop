@@ -1,17 +1,20 @@
 {
   "name": "assemble-recipes",
   "version": "1.0.0",
-  "description": "Some recipes using assemble.",
+  "description": "Some recipes using assemble v0.6.0+.",
   "main": "index.js",
   "scripts": {
-    "test": "mocha ./**/*.spec.js"
+    "test": "mocha ./src/**/*.spec.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/stefanwalther/assemble-recipes.git"
   },
   "keywords": [
-    "assemble"
+    "assemble",
+    "recipes",
+    "samples",
+    "demos"
   ],
   "author": "Stefan Walther",
   "license": "MIT",
@@ -25,7 +28,7 @@
     "gulp-drafts": "^0.2.0",
     "gulp-extname": "^0.2.0",
     "helper-markdown": "^0.1.2",
-    "markdown-toc": "github:stefanwalther/markdown-toc"
+    "markdown-toc": "^0.12.3"
   },
   "devDependencies": {
     "chai": "^3.4.1",

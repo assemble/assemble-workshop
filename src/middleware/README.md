@@ -1,4 +1,4 @@
-# Middleware
+## Middleware events
 
 Events where you can hook into to create middleware logic.
 
