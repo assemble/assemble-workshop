@@ -4,7 +4,7 @@
   "description": "Some recipes using assemble.",
   "main": "index.js",
   "scripts": {
-    "test": "mocha test"
+    "test": "mocha ./**/*.spec.js"
   },
   "repository": {
     "type": "git",
@@ -23,7 +23,9 @@
     "assemble": "^0.6.3",
     "export-files": "^2.1.0",
     "gulp-drafts": "^0.2.0",
-    "gulp-extname": "^0.2.0"
+    "gulp-extname": "^0.2.0",
+    "helper-markdown": "^0.1.2",
+    "markdown-toc": "github:stefanwalther/markdown-toc"
   },
   "devDependencies": {
     "chai": "^3.4.1",
