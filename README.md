@@ -2,6 +2,12 @@
 
 Some recipes for working with [assemble](https://github.com/assemble/assemble) v0.6.0+.
 
+- [Working with collections](src/collection-basic)
+- [Default layout](src/default-layout)
+- [Drafts](src/drafts)
+- [Events to hook into with middleware](src/middleware)
+- [Middleware example: Bind TOC to view](src/middleware-page-toc)
+
 ## Running tests
 
 Install dev dependencies:
