@@ -8,3 +8,5 @@ Events where you can hook into to create middleware logic.
 - postCompile
 - preRender
 - postRender
+
+Example for a middleware:

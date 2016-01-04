@@ -10,7 +10,7 @@ var utils = require( './../lib/test-utils' );
 chai.use( chaiFs );
 var app = require( './index' );
 
-describe.only( 'default-layout', function () {
+describe( 'default-layout', function () {
 
 	var delPath = path.join( __dirname, './.build' );
 	beforeEach( function ( cb ) {
