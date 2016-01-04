@@ -2,6 +2,7 @@
 
 Some recipes for working with [assemble](https://github.com/assemble/assemble) v0.6.0+.
 
+- [Assemble & BrowserSync](src/browser-sync)
 - [Working with collections](src/collection-basic)
 - [Default layout](src/default-layout)
 - [Drafts](src/drafts)
