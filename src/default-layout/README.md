@@ -2,31 +2,38 @@
 
 > This recipe demonstrates how to define or force a default layout.
 
-Basically, to set the default-layout for the entire app, use a global option `layout`:
+**Setting the layout manually:**
 
-```
-app.option('layout', 'the-special-one');
-```
-
-This equals to setting the default layout in every document in the front matter yml:
+The layout for each document can be set in the front matter yml:
 
 ```
 ---
-title: This is the title
-layout: the-special-one
+title: Some amazing title
+layout: whatever-layout
 ---
 ```
 
-The layout can also be set using some middleware as the following example demonstrates:
+**Defining a default layout:**
+
+If you want to define a default layout for the entire app, first set the global option `layout`:
+
+```
+app.option('layout', 'whatever-layout');
+```
+
+Then use some middleware to set the default layout if not explicitely defined in the current document:
 
 ```js
 app.preLayout( /./, function ( view, next ) {
-	// if the layout is not defined, set it to a specific one ...
-	if ( !view.layout ) {
-		view.layout = 'whatever-layout';
-	}
-	next();
+	// if the layout is not defined, use the default one ...
+	if (!view.layout && app.options.layout) {
+    	view.layout = app.options.layout;
+  	}
+  	next();
 } );
+```
+
+
 
 
 

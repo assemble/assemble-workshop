@@ -10,7 +10,7 @@ var utils = require( './../lib/test-utils' );
 chai.use( chaiFs );
 var app = require( './index' );
 
-describe( 'default-layout', function () {
+describe.only( 'default-layout', function () {
 
 	var delPath = path.join( __dirname, './.build' );
 	beforeEach( function ( cb ) {
@@ -24,7 +24,7 @@ describe( 'default-layout', function () {
 		app.build( 'default', function ( err ) {
 			expect( err ).to.not.exist;
 			expect( path.join( __dirname, './.build/explicit.md' ) ).to.have.content.that.match( /This is the special layout/ );
-			expect( path.join( __dirname, './.build/implicit.md' ) ).to.have.content( 'Implicit' );
+			expect( path.join( __dirname, './.build/implicit.md' ) ).to.have.content.that.match( /This is the special layout/ );
 			done();
 		} )
 	} );
