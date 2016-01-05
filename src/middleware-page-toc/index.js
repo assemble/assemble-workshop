@@ -8,8 +8,6 @@ var app = assemble();
 
 app.pages( path.join(__dirname, './content/**/*.{md,hbs}'));
 app.layouts( path.join( __dirname, './templates/layouts/**/*.hbs'));
-app.helper( 'markdown', require( 'helper-markdown' ) );
-
 /**
  * Bind an object called `toc` to each view containing the table of contents using markdown-toc.
  */
@@ -17,6 +15,8 @@ app.preRender( /\.md/, function ( view, next ) {
 	view.data.toc = toc(view._content ).json;
 	next();
 } );
+
+app.helper( 'markdown', require( 'helper-markdown' ) );
 
 /**
  * Set the default layout for files with the extension .md or .hbs.
