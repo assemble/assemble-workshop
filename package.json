@@ -1,8 +1,8 @@
 {
   "name": "assemble-recipes",
-  "version": "1.0.0",
   "description": "Some recipes using assemble v0.6.0+.",
-  "main": "index.js",
+  "version": "0.1.0",
+  "main": "",
   "scripts": {
     "test": "mocha ./src/**/*.spec.js"
   },
@@ -16,7 +16,10 @@
     "samples",
     "demos"
   ],
-  "author": "Stefan Walther",
+  "author": {
+    "name": "Stefan Walther",
+    "url": "https://github.com/stefanwalther"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/assemble/assemble-recipes/issues"
@@ -39,5 +42,8 @@
     "del": "^2.2.0",
     "export-files": "^2.1.0",
     "mocha": "^2.3.4"
+  },
+  "engines": {
+    "node": ">=0.10.0"
   }
 }
