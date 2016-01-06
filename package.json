@@ -1,7 +1,7 @@
 {
   "name": "assemble-recipes",
   "description": "Some recipes using assemble v0.7.0+.",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "main": "",
   "scripts": {
     "test": "mocha ./src/**/*.spec.js",
@@ -30,10 +30,11 @@
     "assemble": "^0.7.0",
     "browser-sync": "^2.11.0",
     "export-files": "^2.1.0",
-    "gulp-cssnano": "^2.0.0",
+    "gulp-cssnano": "^2.1.0",
     "gulp-drafts": "^0.2.0",
     "gulp-extname": "^0.2.0",
     "gulp-less": "^3.0.5",
+    "gulp-sourcemaps": "^1.6.0",
     "helper-markdown": "^0.1.2",
     "markdown-toc": "^0.12.3"
   },

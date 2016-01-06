@@ -4,10 +4,13 @@
 
 ## Recipes
 
+All recipes contain some explanation but also a fully working version of the recipe in the according folder.
+
 * [Assemble & BrowserSync](src/browser-sync)
 * [Working with collections](src/collection-basic)
 * [Default layout](src/default-layout)
 * [Drafts](src/drafts)
+* [Less to CSS](src/less)
 * [Events to hook into with middleware](src/middleware)
 * [Middleware example: Bind TOC to view](src/middleware-page-toc)
 
