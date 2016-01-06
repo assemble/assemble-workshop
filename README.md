@@ -1,6 +1,8 @@
-# Assemble recipes
+# Assemble recipes [![NPM version](https://badge.fury.io/js/assemble-recipes.svg)](http://badge.fury.io/js/assemble-recipes)  [![Build Status](https://travis-ci.org/assemble/assemble-recipes.svg)](https://travis-ci.org/assemble/assemble-recipes)
 
-Some recipes for working with [assemble](https://github.com/assemble/assemble) v0.7.0+:
+> Some recipes using assemble v0.7.0+.
+
+## Recipes
 
 * [Assemble & BrowserSync](src/browser-sync)
 * [Working with collections](src/collection-basic)

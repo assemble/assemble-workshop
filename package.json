@@ -1,6 +1,6 @@
 {
   "name": "assemble-recipes",
-  "description": "Some recipes using assemble v0.6.0+.",
+  "description": "Some recipes using assemble v0.7.0+.",
   "version": "0.1.0",
   "main": "",
   "scripts": {
