@@ -1,4 +1,3 @@
-'use strict';
 var assemble = require( 'assemble' );
 var extname = require( 'gulp-extname' );
 var path = require( 'path' );
@@ -40,6 +39,6 @@ app.task( 'content:pages', ['init'], function () {
 		.pipe( app.dest( path.join( __dirname, './.build' ) ) );
 } );
 
-app.task( 'default', ['content:articles', 'content:pages']);
+app.task( 'default', ['content:articles', 'content:pages'] );
 
 module.exports = app;

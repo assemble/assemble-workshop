@@ -4,7 +4,8 @@
   "version": "0.1.0",
   "main": "",
   "scripts": {
-    "test": "mocha ./src/**/*.spec.js"
+    "test": "mocha ./src/**/*.spec.js",
+    "eslint": "node node_modules/eslint/bin/eslint src"
   },
   "repository": {
     "type": "git",
@@ -40,6 +41,8 @@
     "chai": "^3.4.1",
     "chai-fs": "github:peterkc/chai-fs",
     "del": "^2.2.0",
+    "eslint": "^1.10.3",
+    "eslint-plugin-mocha": "^1.1.0",
     "export-files": "^2.1.0",
     "mocha": "^2.3.4"
   },

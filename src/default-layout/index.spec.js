@@ -1,9 +1,7 @@
-'use strict';
+/*eslint no-unused-expressions:0*/
 var chai = require( 'chai' );
 var expect = chai.expect;
-var del = require( 'del' );
 var path = require( 'path' );
-var fs = require( 'fs' );
 var chaiFs = require( 'chai-fs' );
 var utils = require( './../lib/test-utils' );
 
@@ -14,10 +12,10 @@ describe( 'default-layout', function () {
 
 	var delPath = path.join( __dirname, './.build' );
 	beforeEach( function ( cb ) {
-		utils.clean( delPath, cb )
+		utils.clean( delPath, cb );
 	} );
-	afterEach( function (cb) {
-		utils.clean(delPath, cb)
+	afterEach( function ( cb ) {
+		utils.clean( delPath, cb );
 	} );
 
 	it( 'should be effective', function ( done ) {
@@ -26,7 +24,6 @@ describe( 'default-layout', function () {
 			expect( path.join( __dirname, './.build/explicit.md' ) ).to.have.content.that.match( /This is the special layout/ );
 			expect( path.join( __dirname, './.build/implicit.md' ) ).to.have.content.that.match( /This is the special layout/ );
 			done();
-		} )
+		} );
 	} );
-
 } );

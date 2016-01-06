@@ -1,4 +1,3 @@
-'use strict';
 var assemble = require( 'assemble' );
 var path = require( 'path' );
 var drafts = require( 'gulp-drafts' );

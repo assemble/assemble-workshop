@@ -1,4 +1,3 @@
-'use strict';
 var assemble = require( 'assemble' );
 var extname = require( 'gulp-extname' );
 var less = require( 'gulp-less' );
@@ -8,7 +7,7 @@ var path = require( 'path' );
 var app = assemble();
 
 app.task( 'init', function ( cb ) {
-	app.helper('markdown', require('helper-markdown'));
+	app.helper( 'markdown', require( 'helper-markdown' ) );
 	app.layouts( path.join( __dirname, './templates/layouts/**/*.hbs' ) );
 	cb();
 } );
@@ -17,7 +16,7 @@ app.task( 'css', function () {
 	return app.src( path.join( __dirname, './less/default.less' ) )
 		.pipe( less() )
 		.pipe( app.dest( path.join( __dirname, './.build/css' ) ) )
-		.pipe( browserSync.stream() )
+		.pipe( browserSync.stream() );
 } );
 
 app.task( 'serve', function () {
@@ -27,7 +26,7 @@ app.task( 'serve', function () {
 		server: {
 			baseDir: path.join( __dirname, './.build' )
 		}
-	} )
+	} );
 } );
 
 app.task( 'content', ['init'], function () {
@@ -36,13 +35,13 @@ app.task( 'content', ['init'], function () {
 		.on( 'err', console.error )
 		.pipe( extname() )
 		.pipe( app.dest( path.join( __dirname, './.build' ) ) )
-		.pipe(browserSync.stream());
+		.pipe( browserSync.stream() );
 } );
 
 app.task( 'default', ['css', 'content', 'serve'], function () {
 } );
 
-app.watch( path.join(__dirname, './content/**/*.md'), ['content']);
-app.watch( path.join(__dirname, './less/**/*.less'), ['css']);
+app.watch( path.join( __dirname, './content/**/*.md' ), ['content'] );
+app.watch( path.join( __dirname, './less/**/*.less' ), ['css'] );
 
 module.exports = app;
