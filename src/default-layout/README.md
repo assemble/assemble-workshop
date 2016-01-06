@@ -21,7 +21,7 @@ If you want to define a default layout for the entire app, first set the global 
 app.option('layout', 'whatever-layout');
 ```
 
-Then use some middleware to set the default layout if not explicitely defined in the current document:
+Then use some middleware to set the default layout if not explicitly defined in the current document:
 
 ```js
 app.preLayout( /./, function ( view, next ) {
