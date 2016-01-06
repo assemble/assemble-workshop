@@ -14,8 +14,15 @@ app.task( 'css', function () {
 
 app.task( 'css:optimized', function () {
 
-	var lessOptions = {};
-	var nanoOptions = {};
+	// http://lesscss.org/#using-less-configuration
+	var lessOptions = {
+		compress: false // Let's cssnano do the job.
+	};
+
+	// http://cssnano.co/optimisations/
+	var nanoOptions = {
+		autoprefixer: false
+	};
 
 	return app.src( path.join( __dirname, './less/default.less' ) )
 		.pipe( sourceMaps.init() )
