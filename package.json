@@ -5,7 +5,7 @@
   "main": "",
   "scripts": {
     "test": "mocha ./recipes/**/*.spec.js",
-    "eslint": "node node_modules/eslint/bin/eslint src"
+    "eslint": "node node_modules/eslint/bin/eslint recipes"
   },
   "repository": {
     "type": "git",
@@ -44,7 +44,6 @@
     "del": "^2.2.0",
     "eslint": "^2.1.0",
     "eslint-plugin-mocha": "^2.0.0",
-    "export-files": "^2.1.1",
     "mocha": "^2.4.5"
   },
   "engines": {

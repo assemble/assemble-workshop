@@ -1,3 +1,4 @@
+'use strict';
 var assemble = require( 'assemble' );
 var extname = require( 'gulp-extname' );
 var less = require( 'gulp-less' );

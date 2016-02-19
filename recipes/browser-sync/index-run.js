@@ -1,3 +1,4 @@
+'use strict';
 var app = require( './index' );
 
 app.build( 'default', function ( err ) {

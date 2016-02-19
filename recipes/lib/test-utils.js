@@ -1,3 +1,4 @@
+'use strict';
 var del = require( 'del' );
 
 function clean ( delPath, cb ) {

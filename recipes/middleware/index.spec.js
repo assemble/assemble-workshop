@@ -1,4 +1,5 @@
 /*eslint no-unused-expressions:0*/
+'use strict';
 var chai = require( 'chai' );
 var expect = chai.expect;
 var chaiFs = require( 'chai-fs' );

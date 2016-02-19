@@ -1,3 +1,4 @@
+'use strict';
 var assemble = require( 'assemble' );
 var less = require( 'gulp-less' );
 var path = require( 'path' );

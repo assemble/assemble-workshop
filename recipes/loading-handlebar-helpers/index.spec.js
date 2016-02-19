@@ -1,4 +1,5 @@
 /*eslint no-unused-expressions:0*/
+'use strict';
 var chai = require( 'chai' );
 var expect = chai.expect;
 var chaiFs = require( 'chai-fs' );
@@ -11,7 +12,7 @@ var app = require( './index' );
 describe( 'Helper', function () {
 
 	after( function ( done ) {
-		del( path.join( __dirname, './.build' ))
+		del( path.join( __dirname, './.build' ) )
 			.then( function () {
 				done();
 			} );
