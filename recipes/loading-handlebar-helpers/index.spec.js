@@ -8,7 +8,7 @@ var del = require( 'del' );
 chai.use( chaiFs );
 var app = require( './index' );
 
-describe.only( 'Helper', function () {
+describe( 'Helper', function () {
 
 	after( function ( done ) {
 		del( path.join( __dirname, './.build' ))
