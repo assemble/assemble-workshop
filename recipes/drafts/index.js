@@ -4,7 +4,7 @@ var path = require( 'path' );
 var drafts = require( 'gulp-drafts' );
 var app = assemble();
 
-app.pages.src( path.join( __dirname, './content/**/*.{md,hbs}' ) );
+app.pages( path.join( __dirname, './content/**/*.{md,hbs}' ) );
 
 app.task( 'default', function () {
 	return app.pages.toStream()
