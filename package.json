@@ -27,7 +27,7 @@
   },
   "homepage": "https://github.com/assemble/assemble-recipes#readme",
   "dependencies": {
-    "assemble": "^0.11.0",
+    "assemble": "^0.12.0",
     "browser-sync": "^2.12.8",
     "export-files": "^2.1.1",
     "gulp-cssnano": "^2.1.2",
