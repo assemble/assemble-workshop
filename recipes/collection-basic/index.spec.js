@@ -17,29 +17,31 @@ describe( 'Collection Basic', function () {
 		utils.clean( delPath, cb );
 	} );
 	afterEach( function ( cb ) {
-		utils.clean( delPath, cb );
+		//utils.clean( delPath, cb );
+		cb();
 	} );
 
 	it( 'should succeed', function ( done ) {
 		app.build( ['default'], function ( err ) {
+
 			expect( err ).to.not.exist;
 
-			var filePath = path.join( __dirname, './.build/article-1.html' );
+			var filePath = path.join( __dirname, './.build/recipes/collection-basic/content/articles/article-1.html' );
 			expect( fs.existsSync( filePath ) ).to.be.true;
 			expect( filePath ).to.have.content.that.match( /This is the abstract of article 2/ );
 			expect( filePath ).to.have.content.that.match( /This is the abstract of page 2/ );
 
-			filePath = path.join( __dirname, './.build/article-2.html' );
+			filePath = path.join( __dirname, './.build/recipes/collection-basic/content/articles/article-2.html' );
 			expect( fs.existsSync( filePath ) ).to.be.true;
 
-			filePath = path.join( __dirname, './.build/page-1.html' );
+			filePath = path.join( __dirname, './.build/recipes/collection-basic/content/pages/page-1.html' );
 			expect( fs.existsSync( filePath ) ).to.be.true;
 
-			filePath = path.join( __dirname, './.build/page-2.html' );
+			filePath = path.join( __dirname, './.build/recipes/collection-basic/content/pages/page-2.html' );
 			expect( fs.existsSync( filePath ) ).to.be.true;
 
 			// Just a negative test to ensure that assertion works correctly.
-			filePath = path.join( __dirname, './.build/page-3.html' );
+			filePath = path.join( __dirname, './.build/recipes/collection-basic/content/pages/page-3.html' );
 			expect( fs.existsSync( path.join( __dirname, './.build/page-3.html' ) ) ).to.be.false;
 			done();
 		} );
