@@ -28,7 +28,7 @@
   "homepage": "https://github.com/assemble/assemble-recipes#readme",
   "dependencies": {
     "assemble": "^0.12.0",
-    "browser-sync": "^2.12.8",
+    "browser-sync": "^2.12.10",
     "export-files": "^2.1.1",
     "gulp-cssnano": "^2.1.2",
     "gulp-drafts": "^0.2.0",
@@ -36,15 +36,15 @@
     "gulp-less": "^3.1.0",
     "gulp-sourcemaps": "^1.6.0",
     "helper-markdown": "^0.2.1",
-    "markdown-toc": "^0.12.10"
+    "markdown-toc": "^0.12.12"
   },
   "devDependencies": {
     "chai": "^3.5.0",
     "chai-fs": "github:peterkc/chai-fs",
     "del": "^2.2.0",
-    "eslint": "^2.10.2",
+    "eslint": "^2.11.1",
     "eslint-plugin-mocha": "^2.2.0",
-    "mocha": "^2.4.5"
+    "mocha": "^2.5.3"
   },
   "engines": {
     "node": ">=0.10.0"
