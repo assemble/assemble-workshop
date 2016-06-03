@@ -3,6 +3,7 @@ var assemble = require( 'assemble' );
 var extname = require( 'gulp-extname' );
 var toc = require( 'markdown-toc' );
 var path = require( 'path' );
+var debug = require( 'debug' )( 'middleware-page-docs' );
 
 var app = assemble();
 
@@ -31,6 +32,7 @@ app.preLayout( /\/content\/.*\.(md|hbs)/, function ( view, next ) {
 app.task( 'default', function () {
 	return app.toStream( 'pages' )
 		.pipe( app.renderFile() )
+		.on( 'error', console.error )
 		.pipe( extname() )
 		.pipe( app.dest( path.join( __dirname, './.build' ) ) );
 } );
