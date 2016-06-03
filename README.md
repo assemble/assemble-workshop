@@ -12,6 +12,7 @@ All recipes contain some explanation but also a fully working version of the rec
 * [Drafts](recipes/drafts)
 * [Less to CSS](recipes/less)
 * [Loading handlebar helpers](recipes/loading-handlebar-helpers)
+* [Permalinks](recipes/permalinks)
 * [Events to hook into with middleware](recipes/middleware)
 * [Middleware example: Bind TOC to view](recipes/middleware-page-toc)
 
