@@ -5,7 +5,7 @@
 ## Purpose of this recipe
 - Convert some .less files to a single style sheet (.css file).
 - Convert some markdown files to html output, containing also a link to the generated CSS file.
-- Servce the files in the local browser automatically
+- Serve the files in the local browser automatically
 - Create some watchers on
 	- all .less files (`./less` folder)
 	- all content files (`./content` folder
