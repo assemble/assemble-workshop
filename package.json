@@ -29,6 +29,7 @@
   "dependencies": {
     "assemble": "^0.12.0",
     "browser-sync": "^2.12.10",
+    "debug": "^2.2.0",
     "export-files": "^2.1.1",
     "gulp-cssnano": "^2.1.2",
     "gulp-drafts": "^0.2.0",
