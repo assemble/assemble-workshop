@@ -7,14 +7,16 @@ var del = require( 'del' );
 var slugify = require( 'slug' );
 
 var paths = {
-	buildDir: path.join( __dirname, './.build' )
+	buildDir: path.join( __dirname, './.build' ),
+	srcDir: path.join( __dirname, './content/**/*.{md,hbs}' ),
+	templates: path.join( __dirname, './templates/layouts/**/*.hbs' )
 };
 
 var app = assemble();
 app.use( permalinks() );
 
 app.create( 'articles' /*, {layout: 'body'}*/ )
-	.use( permalinks( 'whatever/:category/:getSlug()/index.html', {
+	.use( permalinks( path.join( paths.buildDir, 'whatever/:category/:getSlug()/index.html'), {
 		getSlug: function () {
 			if ( this.slug ) {
 				return slugify( this.slug, {lower: true} );
@@ -24,7 +26,7 @@ app.create( 'articles' /*, {layout: 'body'}*/ )
 		}
 	} ) );
 
-app.articles( path.join( __dirname, './content/**/*.{md,hbs}' ) );
+app.articles( paths.srcDir );
 
 app.option( 'renameKey', function ( key, view ) {
 	key = path.relative( path.join( __dirname, './content/' ), key );
@@ -32,7 +34,7 @@ app.option( 'renameKey', function ( key, view ) {
 } );
 
 app.task( 'load-templates', function ( cb ) {
-	app.layouts( path.join( __dirname, './templates/layouts/**/*.hbs' ) );
+	app.layouts( paths.templates );
 	cb();
 } );
 
