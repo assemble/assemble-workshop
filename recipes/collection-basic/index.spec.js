@@ -17,8 +17,7 @@ describe( 'Collection Basic', function () {
 		utils.clean( delPath, cb );
 	} );
 	afterEach( function ( cb ) {
-		//utils.clean( delPath, cb );
-		cb();
+		utils.clean( delPath, cb );
 	} );
 
 	it( 'should succeed', function ( done ) {
