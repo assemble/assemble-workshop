@@ -14,9 +14,11 @@ var app = require( './index' );
 describe( 'Collection Basic', function () {
 
 	var delPath = path.join( __dirname, './.build' );
+
 	beforeEach( function ( cb ) {
 		utils.clean( delPath, cb );
 	} );
+
 	afterEach( function ( cb ) {
 		utils.clean( delPath, cb );
 	} );
