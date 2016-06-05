@@ -3,14 +3,13 @@
 var chai = require( 'chai' );
 var expect = chai.expect;
 var path = require( 'path' );
-var fs = require( 'fs' );
 var chaiFs = require( 'chai-fs' );
 var utils = require( './../lib/test-utils' );
 
 chai.use( chaiFs );
 var app = require( './index' );
 
-describe( 'Drafts', function () {
+describe.only( 'drafts', function () {
 
 	var delPath = path.join( __dirname, './.build' );
 	beforeEach( function ( cb ) {
@@ -20,7 +19,7 @@ describe( 'Drafts', function () {
 		utils.clean( delPath, cb );
 	} );
 
-	it( 'should succeed', function ( done ) {
+	it( 'using gulp-drafts renders only non-draft files.', function ( done ) {
 		app.build( 'default', function ( err ) {
 			expect( err ).to.not.exist;
 			expect( path.join( __dirname, './.build/default.md' ) ).to.have.content( 'Default' );
