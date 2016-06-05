@@ -39,8 +39,13 @@ app.task( 'content', ['init'], function () {
 		.pipe( browserSync.stream() );
 } );
 
-app.task( 'default', ['css', 'content', 'serve'], function () {
-} );
+app.task( 'default',
+	[
+		'css',
+		'content',
+		'serve'
+	], function () {
+	} );
 
 app.watch( path.join( __dirname, './content/**/*.md' ), ['content'] );
 app.watch( path.join( __dirname, './less/**/*.less' ), ['css'] );
