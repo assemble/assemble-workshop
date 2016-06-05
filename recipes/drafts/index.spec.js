@@ -19,8 +19,17 @@ describe.only( 'drafts', function () {
 		utils.clean( delPath, cb );
 	} );
 
-	it( 'using gulp-drafts renders only non-draft files.', function ( done ) {
+	it( 'using gulp-drafts: renders only non-draft files.', function ( done ) {
 		app.build( 'gulp-draft', function ( err ) {
+			expect( err ).to.not.exist;
+			expect( path.join( __dirname, './.build/default.md' ) ).to.have.content( 'Default' );
+			expect( path.join( __dirname, './.build/draft-false.md' ) ).to.have.content( 'Draft false' );
+			done();
+		} );
+	} );
+
+	it( 'using custom draft-plugin: renders only non-draft files.', function ( done ) {
+		app.build( 'draft-plugin', function ( err ) {
 			expect( err ).to.not.exist;
 			expect( path.join( __dirname, './.build/default.md' ) ).to.have.content( 'Default' );
 			expect( path.join( __dirname, './.build/draft-false.md' ) ).to.have.content( 'Draft false' );
