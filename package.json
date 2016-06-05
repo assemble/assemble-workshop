@@ -33,6 +33,7 @@
     "debug": "^2.2.0",
     "del": "^2.2.0",
     "export-files": "^2.1.1",
+    "fs-extra": "^0.30.0",
     "gulp-cssnano": "^2.1.2",
     "gulp-drafts": "^0.2.0",
     "gulp-extname": "^0.2.2",
