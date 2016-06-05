@@ -1,3 +1,4 @@
+/*global require*/
 /*eslint no-unused-expressions:0*/
 'use strict';
 var chai = require( 'chai' );
@@ -13,12 +14,13 @@ var app = require( './index' );
 describe( 'Collection Basic', function () {
 
 	var delPath = path.join( __dirname, './.build' );
+
 	beforeEach( function ( cb ) {
 		utils.clean( delPath, cb );
 	} );
+
 	afterEach( function ( cb ) {
-		//utils.clean( delPath, cb );
-		cb();
+		utils.clean( delPath, cb );
 	} );
 
 	it( 'should succeed', function ( done ) {
@@ -26,22 +28,21 @@ describe( 'Collection Basic', function () {
 
 			expect( err ).to.not.exist;
 
-			var filePath = path.join( __dirname, './.build/recipes/collection-basic/content/articles/article-1.html' );
-			expect( fs.existsSync( filePath ) ).to.be.true;
-			expect( filePath ).to.have.content.that.match( /This is the abstract of article 2/ );
-			expect( filePath ).to.have.content.that.match( /This is the abstract of page 2/ );
+			var filePath = path.join( __dirname, './.build/article-1.html' );
+			expect( filePath ).to.be.a.file();
+			expect( filePath ).to.have.content.that.match( /This is the abstract of article 1/ );
 
-			filePath = path.join( __dirname, './.build/recipes/collection-basic/content/articles/article-2.html' );
-			expect( fs.existsSync( filePath ) ).to.be.true;
-
-			filePath = path.join( __dirname, './.build/recipes/collection-basic/content/pages/page-1.html' );
+			filePath = path.join( __dirname, './.build/article-2.html' );
 			expect( fs.existsSync( filePath ) ).to.be.true;
 
-			filePath = path.join( __dirname, './.build/recipes/collection-basic/content/pages/page-2.html' );
+			filePath = path.join( __dirname, './.build/page-1.html' );
+			expect( fs.existsSync( filePath ) ).to.be.true;
+
+			filePath = path.join( __dirname, './.build/page-2.html' );
 			expect( fs.existsSync( filePath ) ).to.be.true;
 
 			// Just a negative test to ensure that assertion works correctly.
-			filePath = path.join( __dirname, './.build/recipes/collection-basic/content/pages/page-3.html' );
+			filePath = path.join( __dirname, './.build/page-3.html' );
 			expect( fs.existsSync( path.join( __dirname, './.build/page-3.html' ) ) ).to.be.false;
 			done();
 		} );
