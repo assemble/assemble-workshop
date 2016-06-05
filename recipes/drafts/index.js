@@ -2,7 +2,7 @@
 var assemble = require( 'assemble' );
 var path = require( 'path' );
 var gulpDrafts = require( 'gulp-drafts' );
-var pluginDrafts = require( './templates/plugins/drafts' );
+var pluginDrafts = require( './plugins/drafts' );
 var app = assemble();
 
 var paths = {
