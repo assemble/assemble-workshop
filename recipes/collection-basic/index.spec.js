@@ -1,3 +1,4 @@
+/*global require*/
 /*eslint no-unused-expressions:0*/
 'use strict';
 var chai = require( 'chai' );
