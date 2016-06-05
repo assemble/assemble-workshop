@@ -20,7 +20,7 @@ describe.only( 'drafts', function () {
 	} );
 
 	it( 'using gulp-drafts renders only non-draft files.', function ( done ) {
-		app.build( 'default', function ( err ) {
+		app.build( 'gulp-draft', function ( err ) {
 			expect( err ).to.not.exist;
 			expect( path.join( __dirname, './.build/default.md' ) ).to.have.content( 'Default' );
 			expect( path.join( __dirname, './.build/draft-false.md' ) ).to.have.content( 'Draft false' );
