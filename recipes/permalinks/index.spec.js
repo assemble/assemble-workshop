@@ -17,8 +17,7 @@ describe( 'permalinks', function () {
 		utils.clean( delPath, cb );
 	} );
 	afterEach( function ( cb ) {
-		//utils.clean( delPath, cb );
-		cb();
+		utils.clean( delPath, cb );
 	} );
 
 	it( 'should create the appropriate output', function ( done ) {
