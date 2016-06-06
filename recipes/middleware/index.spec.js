@@ -3,10 +3,21 @@
 var chai = require( 'chai' );
 var expect = chai.expect;
 var sinon = require( 'sinon' );
+var utils = require( './../lib/test-utils' );
+var path = require( 'path' );
 
 var app = require( './index' );
 
 describe( 'middleware', function () {
+
+	var delPath = path.join( __dirname, './.build' );
+	beforeEach( function ( cb ) {
+		utils.clean( delPath, cb );
+	} );
+	afterEach( function ( cb ) {
+		utils.clean( delPath, cb );
+	} );
+
 	it( 'events are emitted', function ( done ) {
 
 		var spyPreRender = sinon.spy();
