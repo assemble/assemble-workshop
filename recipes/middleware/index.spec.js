@@ -11,7 +11,7 @@ chai.use( sinonChai );
 
 var app = require( './index' );
 
-describe.only( 'middleware', function () {
+describe( 'middleware', function () {
 
 	var delPath = path.join( __dirname, './.build' );
 	beforeEach( function ( cb ) {
