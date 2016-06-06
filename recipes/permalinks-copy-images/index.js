@@ -12,7 +12,6 @@ var paths = {
 };
 
 var app = assemble();
-app.use( permalinks() );
 
 app.task( 'init', function ( cb ) {
 	app.layouts( path.templates );
