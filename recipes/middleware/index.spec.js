@@ -38,6 +38,7 @@ describe( 'middleware', function () {
 		app.build( 'default', function ( err ) {
 			expect( err ).to.not.exist;
 
+			//Todo: Use sinonChai
 			sinon.assert.calledTwice( spyPreRender );
 			sinon.assert.calledTwice( spyPreCompile );
 			sinon.assert.calledTwice( spyPreLayout );
