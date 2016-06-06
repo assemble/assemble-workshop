@@ -13,7 +13,6 @@ var paths = {
 };
 
 var app = assemble();
-app.use( permalinks() );
 
 app.create( 'articles' /*, {layout: 'body'}*/ )
 	.use( permalinks( path.join( paths.buildDir, 'whatever/:category/:getSlug()/index.html'), {
