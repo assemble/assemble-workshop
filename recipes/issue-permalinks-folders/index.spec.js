@@ -27,7 +27,6 @@ describe.only( 'issue-permalinks-folders', function () {
 
 			expect( path.join( __dirname, './.build/articles/foo/index.html' ) ).to.be.a.file();
 
-
 			done();
 		} );
 	} );
