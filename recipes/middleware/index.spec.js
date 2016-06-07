@@ -56,7 +56,6 @@ describe( 'middleware', function () {
 		app.build( 'default', function ( err ) {
 			expect( err ).to.not.exist;
 
-			// Doesn't get called as of Assemble 0.13.0
 			//expect( spyOnLoad ).to.have.been.calledOnce;
 			//expect( spyOnStream ).to.have.been.calledOnce
 			//expect( spyOnLayout).to.have.been.calledOnce;
