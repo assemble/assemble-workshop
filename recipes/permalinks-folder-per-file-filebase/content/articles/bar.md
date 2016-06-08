@@ -1,0 +1,4 @@
+---
+title: bar
+---
+{{title}}

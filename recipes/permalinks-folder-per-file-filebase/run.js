@@ -1,5 +1,5 @@
 'use strict';
-var app = require( './index' );
+var app = require( './assemblefile' );
 
 app.build( ['default'], function ( err ) {
 	if ( err ) {

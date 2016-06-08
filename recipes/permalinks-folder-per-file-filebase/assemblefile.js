@@ -5,14 +5,14 @@ var plugin = require( './src/plugins' );
 var glob = require( 'glob' );
 
 var paths = {
-	buildDir: path.join( __dirname, './.build' ),
+	buildDir: path.join( __dirname, './.build/articles' ),
 	srcDir: path.join( __dirname, './content/articles/**/*.{md,hbs}' )
 };
 
 var app = assemble();
 
 app.create( 'articles' )
-	.use( plugin.permalinks( path.join( paths.buildDir, ':name/index.html' )));
+	.use( plugin.permalinks( path.join( paths.buildDir, ':name/index.html' ) ) );
 
 app.articles( paths.srcDir );
 
@@ -22,10 +22,12 @@ app.task( 'articles', function () {
 		.on( 'error', console.error )
 		.pipe( app.articles.permalink() )
 		.on( 'error', console.error )
-		.pipe( app.dest( paths.buildDir ) )
+		.pipe( app.dest( function ( file ) {
+			file.base = paths.buildDir;
+			return paths.buildDir;
+		} ) )
 		.on( 'error', console.error );
 } );
-
 
 app.task( 'default', [
 	'articles'
