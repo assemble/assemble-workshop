@@ -1,0 +1,4 @@
+---
+title: baz
+---
+{{title}}
