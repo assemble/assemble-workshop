@@ -1,0 +1,27 @@
+{
+    "version": "0.1.0",
+    "command": "assemble",
+    "isShellCommand": true,
+    "args": [],
+    "showOutput": "always",
+    "tasks": [
+        {
+            "taskName": "build",
+            "args": [],
+            "isBuildCommand": true,
+            "isWatching": false
+        },
+        {
+            "taskName": "start",
+            "args": [],
+            "isBuildCommand": false,
+            "isWatching": true
+        },
+        {
+            "taskName": "publish",
+            "args": [],
+            "isBuildCommand": false,
+            "isWatching": false
+        }
+    ]
+}

@@ -18,6 +18,7 @@ All recipes contain some explanation but also a fully working version of the rec
 * [Events to hook into with middleware](recipes/middleware)
 * [Middleware example: Bind TOC to view](recipes/middleware-page-toc)
 * [Visual Studio Integration: Basic Bootstrap Site](recipes/visual-studio-integration)
+* [VS Code](recipes/vscode-integration)
 
 
 ## Running tests

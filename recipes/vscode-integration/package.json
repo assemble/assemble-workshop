@@ -1,0 +1,17 @@
+{
+  "name": "vscode-integration",
+  "version": "1.0.0",
+  "description": "example of how to use assemble with VSCode",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 0",
+    "build": "assemble build",
+    "start": "assemble",
+    "deploy": "assemble publish"
+  },
+  "author": "ITLackey",
+  "license": "ISC",
+  "devDependencies": {
+    "assemble": "^0.14.0"
+  }
+}
