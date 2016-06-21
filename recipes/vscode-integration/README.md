@@ -1,4 +1,4 @@
-## Default layout
+## VS Code Integration
 
 > This recipe demonstrates how to wire assemble to VS Code.
 
