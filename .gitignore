@@ -4,3 +4,5 @@ node_modules/
 npm-debug.log
 todo.md
 /**/.build
+/recipes/visual-studio-integration/wwwroot
+/recipes/visual-studio-integration/bower_components
