@@ -26,11 +26,11 @@ describe( 'permalinks-folder-per-file', function () {
 
 			expect( path.join( __dirname, './.build/y/index.html' ) ).to.be.a.file();
 			expect( path.join( __dirname, './.build/z/index.html' ) ).to.be.a.file();
-			
+
 			expect( path.join( __dirname, './.build/folder-1/a/index.html' ) ).to.be.a.file();
 			expect( path.join( __dirname, './.build/folder-1/folder-1-1/c/index.html' ) ).to.be.a.file();
 			expect( path.join( __dirname, './.build/folder-1/folder-1-1/d/index.html' ) ).to.be.a.file();
-			
+
 			expect( path.join( __dirname, './.build/folder-2/b/index.html' ) ).to.be.a.file();
 
 			done();
