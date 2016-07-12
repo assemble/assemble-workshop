@@ -1,31 +1,32 @@
 {
-  "name": "assemble-recipes",
-  "description": "Some recipes using assemble v0.12.0.",
+  "name": "assemble-workshop",
   "version": "0.6.0",
-  "main": "",
-  "scripts": {
-    "test": "mocha ./recipes/**/*.spec.js",
-    "eslint": "node node_modules/eslint/bin/eslint recipes"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/assemble/assemble-recipes.git"
-  },
+  "description": "Some recipes using assemble v0.12.0.",
   "keywords": [
     "assemble",
+    "demos",
     "recipes",
     "samples",
-    "demos"
+    "workshop"
   ],
+  "homepage": "https://github.com/assemble/assemble-workshop#readme",
+  "bugs": {
+    "url": "https://github.com/assemble/assemble-workshop/issues"
+  },
+  "license": "MIT",
   "author": {
     "name": "Stefan Walther",
     "url": "https://github.com/stefanwalther"
   },
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/assemble/assemble-recipes/issues"
+  "main": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/assemble/assemble-workshop.git"
   },
-  "homepage": "https://github.com/assemble/assemble-recipes#readme",
+  "scripts": {
+    "eslint": "node node_modules/eslint/bin/eslint recipes",
+    "test": "mocha ./recipes/**/*.spec.js"
+  },
   "dependencies": {
     "assemble": "github:assemble/assemble",
     "assemble-permalinks": "^0.4.2",
