@@ -1,4 +1,4 @@
-# Assemble recipes [![NPM version](https://img.shields.io/npm/v/assemble-recipes.svg?style=flat)](https://www.npmjs.com/package/assemble-recipes) [![Build Status](https://img.shields.io/travis/assemble/assemble-recipes.svg?style=flat)](https://travis-ci.org/assemble/assemble-recipes)
+# Assemble recipes [![NPM version](https://img.shields.io/npm/v/assemble-workshop.svg?style=flat)](https://www.npmjs.com/package/assemble-workshop) [![Build Status](https://img.shields.io/travis/assemble/assemble-workshop.svg?style=flat)](https://travis-ci.org/assemble/assemble-workshop)
 
 > Some recipes using assemble v0.12.0.
 
@@ -28,7 +28,7 @@ $ npm install -d && npm test
 ```
 
 ## Contributing
-Pull requests and stars are always welcome. For bugs and feature requests, [please create an issue](https://github.com/assemble/assemble-recipes/issues/new).
+Pull requests and stars are always welcome. For bugs and feature requests, [please create an issue](https://github.com/assemble/assemble-workshop/issues/new).
 
 ## Author
 **Stefan Walther**
