@@ -1,0 +1,13 @@
+{
+  "name": "assemble-site-template",
+  "version": "1.0.0",
+  "description": "",
+  "devDependencies": {
+    "assemble": "^0.12.0",
+    "gulp": "^3.9.1",
+    "gulp-ext" : "^1.0.0",
+    "gulp-sitemap": "^4.1.1"
+  },
+  "author": "ITLackey",
+  "license": "ISC"
+}
