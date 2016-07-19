@@ -4,11 +4,12 @@
 var chai = require( 'chai' );
 var expect = chai.expect;
 var path = require( 'path' );
-var fs = require( 'fs' );
-var chaiFs = require( 'chai-fs' );
+var chaiFiles = require( 'chai-files' );
 var utils = require( './../lib/test-utils' );
 
-chai.use( chaiFs );
+chai.use( chaiFiles );
+
+var file = chaiFiles.file;
 var app = require( './index' );
 
 describe( 'Collection Basic', function () {
@@ -29,21 +30,20 @@ describe( 'Collection Basic', function () {
 			expect( err ).to.not.exist;
 
 			var filePath = path.join( __dirname, './.build/article-1.html' );
-			expect( filePath ).to.be.a.file();
-			expect( filePath ).to.have.content.that.match( /This is the abstract of article 1/ );
+			expect( file( filePath ) ).to.exist;
+			expect( file( filePath ) ).to.contain( 'This is the abstract of article 1' );
 
 			filePath = path.join( __dirname, './.build/article-2.html' );
-			expect( fs.existsSync( filePath ) ).to.be.true;
+			expect( file( filePath ) ).to.exist;
 
 			filePath = path.join( __dirname, './.build/page-1.html' );
-			expect( fs.existsSync( filePath ) ).to.be.true;
+			expect( file( filePath ) ).to.exist;
 
 			filePath = path.join( __dirname, './.build/page-2.html' );
-			expect( fs.existsSync( filePath ) ).to.be.true;
+			expect( file( filePath ) ).to.exist;
 
 			// Just a negative test to ensure that assertion works correctly.
-			filePath = path.join( __dirname, './.build/page-3.html' );
-			expect( fs.existsSync( path.join( __dirname, './.build/page-3.html' ) ) ).to.be.false;
+			expect( file( path.join( __dirname, './.build/page-3.html' ) ) ).to.not.exist;
 			done();
 		} );
 	} );

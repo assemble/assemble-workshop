@@ -3,11 +3,11 @@
 var chai = require( 'chai' );
 var expect = chai.expect;
 var path = require( 'path' );
-var fs = require( 'fs' );
-var chaiFs = require( 'chai-fs' );
+var chaiFiles = require( 'chai-files' );
 var utils = require( './../lib/test-utils' );
 
-chai.use( chaiFs );
+chai.use( chaiFiles );
+var file = chaiFiles.file;
 var app = require( './index' );
 
 describe( 'Less to css', function () {
@@ -23,9 +23,9 @@ describe( 'Less to css', function () {
 	it( 'creates a single file, merged from multiple less files', function ( done ) {
 		app.build( 'css', function ( err ) {
 			expect( err ).to.not.exist;
-			expect( fs.existsSync( path.join( __dirname, './.build/css/default.css' ) ) ).to.be.true;
-			expect( fs.existsSync( path.join( __dirname, './.build/css/typography.css' ) ) ).to.be.false;
-			expect( fs.existsSync( path.join( __dirname, './.build/variables.css' ) ) ).to.be.false;
+			expect( file( path.join( __dirname, './.build/css/default.css' ) ) ).to.exist;
+			expect( file( path.join( __dirname, './.build/css/typography.css' ) ) ).to.not.exist;
+			expect( file( path.join( __dirname, './.build/variables.css' ) ) ).to.not.exist;
 			done();
 		} );
 	} );
@@ -34,12 +34,12 @@ describe( 'Less to css', function () {
 		app.build( 'css:optimized', function ( err ) {
 			expect( err ).to.not.exist;
 			var p = path.join( __dirname, './.build/css/default.css' );
-			expect( fs.existsSync( p ) ).to.be.true;
-			expect( p ).to.have.content.that.match( /sourceMappingURL/ );
-			expect( p ).to.have.content.that.match( /body,html\{font-family:Arial,Helvetica Neue,Helvetica,sans-serif;color:#666}h1\{color:#333}/ );
+			expect( file( p ) ).to.exist;
+			expect( file( p ) ).to.match( /sourceMappingURL/ );
+			expect( file( p ) ).to.match( /body,html\{font-family:Arial,Helvetica Neue,Helvetica,sans-serif;color:#666}h1\{color:#333}/ );
 
-			expect( fs.existsSync( path.join( __dirname, './.build/css/typography.css' ) ) ).to.be.false;
-			expect( fs.existsSync( path.join( __dirname, './.build/variables.css' ) ) ).to.be.false;
+			expect( file( path.join( __dirname, './.build/css/typography.css' ) ) ).to.not.exist;
+			expect( file( path.join( __dirname, './.build/variables.css' ) ) ).to.not.exist;
 			done();
 		} );
 	} );

@@ -3,10 +3,11 @@
 var chai = require( 'chai' );
 var expect = chai.expect;
 var path = require( 'path' );
-var chaiFs = require( 'chai-fs' );
+var chaiFiles = require( 'chai-files' );
 var utils = require( './../lib/test-utils' );
 
-chai.use( chaiFs );
+chai.use( chaiFiles );
+var file = chaiFiles.file;
 var app = require( './index' );
 
 describe( 'drafts', function () {
@@ -22,8 +23,8 @@ describe( 'drafts', function () {
 	it( 'using gulp-drafts: renders only non-draft files.', function ( done ) {
 		app.build( 'gulp-draft', function ( err ) {
 			expect( err ).to.not.exist;
-			expect( path.join( __dirname, './.build/default.md' ) ).to.have.content( 'Default' );
-			expect( path.join( __dirname, './.build/draft-false.md' ) ).to.have.content( 'Draft false' );
+			expect( file( path.join( __dirname, './.build/default.md' ) ) ).to.contain( 'Default' );
+			expect( file( path.join( __dirname, './.build/draft-false.md' ) ) ).to.contain( 'Draft false' );
 			done();
 		} );
 	} );
@@ -31,8 +32,8 @@ describe( 'drafts', function () {
 	it( 'using custom draft-plugin: renders only non-draft files.', function ( done ) {
 		app.build( 'draft-plugin', function ( err ) {
 			expect( err ).to.not.exist;
-			expect( path.join( __dirname, './.build/default.md' ) ).to.have.content( 'Default' );
-			expect( path.join( __dirname, './.build/draft-false.md' ) ).to.have.content( 'Draft false' );
+			expect( file( path.join( __dirname, './.build/default.md' ) ) ).to.contain( 'Default' );
+			expect( file( path.join( __dirname, './.build/draft-false.md' ) ) ).to.contain( 'Draft false' );
 			done();
 		} );
 	} );

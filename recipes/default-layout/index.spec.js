@@ -3,10 +3,11 @@
 var chai = require( 'chai' );
 var expect = chai.expect;
 var path = require( 'path' );
-var chaiFs = require( 'chai-fs' );
+var chaiFiles = require( 'chai-files' );
 var utils = require( './../lib/test-utils' );
 
-chai.use( chaiFs );
+chai.use( chaiFiles );
+var file = chaiFiles.file;
 var app = require( './index' );
 
 describe( 'default-layout', function () {
@@ -22,8 +23,8 @@ describe( 'default-layout', function () {
 	it( 'should be effective', function ( done ) {
 		app.build( 'default', function ( err ) {
 			expect( err ).to.not.exist;
-			expect( path.join( __dirname, './.build/explicit.md' ) ).to.have.content.that.match( /This is the special layout/ );
-			expect( path.join( __dirname, './.build/implicit.md' ) ).to.have.content.that.match( /This is the special layout/ );
+			expect( file( path.join( __dirname, './.build/explicit.md' ) ) ).to.match( /This is the special layout/ );
+			expect( file( path.join( __dirname, './.build/implicit.md' ) ) ).to.match( /This is the special layout/ );
 			done();
 		} );
 	} );
