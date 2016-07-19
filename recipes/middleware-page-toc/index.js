@@ -3,7 +3,6 @@ var assemble = require( 'assemble' );
 var extname = require( 'gulp-extname' );
 var toc = require( 'markdown-toc' );
 var path = require( 'path' );
-var debug = require( 'debug' )( 'middleware-page-docs' );
 
 var app = assemble();
 

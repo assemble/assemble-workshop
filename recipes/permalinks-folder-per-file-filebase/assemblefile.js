@@ -2,7 +2,6 @@
 var assemble = require( 'assemble' );
 var path = require( 'path' );
 var plugin = require( './src/plugins' );
-var glob = require( 'glob' );
 
 var paths = {
 	buildDir: path.join( __dirname, './.build/articles' ),
