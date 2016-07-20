@@ -3,11 +3,11 @@
 var chai = require( 'chai' );
 var expect = chai.expect;
 var path = require( 'path' );
-var fs = require( 'fs' );
-var chaiFs = require( 'chai-fs' );
+var chaiFiles = require( 'chai-files' );
 var utils = require( './../lib/test-utils' );
 
-chai.use( chaiFs );
+chai.use( chaiFiles );
+var file = chaiFiles.file;
 var app = require( './assemblefile' );
 
 describe( 'Gulp-sitemap using Assemble', function () {
@@ -23,9 +23,9 @@ describe( 'Gulp-sitemap using Assemble', function () {
 	it( 'creates a three html files from hbs files in src/pages', function ( done ) {
 		app.build( 'pages', function ( err ) {
 			expect( err ).to.not.exist;
-			expect( fs.existsSync( path.join( __dirname, './wwwroot/index.html' ) ) ).to.be.true;
-			expect( fs.existsSync( path.join( __dirname, './wwwroot/about.html' ) ) ).to.be.true;
-			expect( fs.existsSync( path.join( __dirname, './wwwroot/contact.html' ) ) ).to.be.true;
+			expect( file ( path.join( __dirname, './wwwroot/index.html' ) ) ).to.exist;
+			expect( file ( path.join( __dirname, './wwwroot/about.html' ) ) ).to.exist;
+			expect( file ( path.join( __dirname, './wwwroot/contact.html' ) ) ).to.exist
 			done();
 		} );
 	} );
@@ -35,8 +35,8 @@ describe( 'Gulp-sitemap using Assemble', function () {
 			expect( err ).to.not.exist;
 			
 			var p = path.join( __dirname, './wwwroot/sitemap.xml' );
-			expect( fs.existsSync( p ) ).to.be.true;
-			expect( p ).to.have.content.that.match( /urlset/ );
+			expect( file ( p ) ).to.exist;
+			expect( file ( p ) ).to.match( /urlset/ );
 			done();
 		} );
 	} );
