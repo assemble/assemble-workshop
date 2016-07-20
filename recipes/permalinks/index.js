@@ -15,7 +15,7 @@ var paths = {
 var app = assemble();
 
 app.create( 'articles' /*, {layout: 'body'}*/ )
-	.use( permalinks( path.join( paths.buildDir, 'whatever/:category/:getSlug()/index.html'), {
+	.use( permalinks( path.join( paths.buildDir, 'whatever/:category/:getSlug()/index.html' ), {
 		getSlug: function () {
 			if ( this.slug ) {
 				return slugify( this.slug, {lower: true} );
@@ -27,7 +27,7 @@ app.create( 'articles' /*, {layout: 'body'}*/ )
 
 app.articles( paths.srcDir );
 
-app.option( 'renameKey', function ( key, view ) {
+app.option( 'renameKey', function ( key /*, view */ ) {
 	key = path.relative( path.join( __dirname, './content/' ), key );
 	return utils.stripExtension( key, path.extname( key ) );
 } );

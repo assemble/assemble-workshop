@@ -31,7 +31,7 @@ app.task( 'init', function ( cb ) {
 		if ( this.context.title === title ) {
 			return 'class="active"';
 		} else {
-			return;
+			return '';
 		}
 	} );
 

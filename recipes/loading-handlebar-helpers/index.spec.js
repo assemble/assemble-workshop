@@ -2,11 +2,12 @@
 'use strict';
 var chai = require( 'chai' );
 var expect = chai.expect;
-var chaiFs = require( 'chai-fs' );
+var chaiFiles = require( 'chai-files' );
 var path = require( 'path' );
 var del = require( 'del' );
 
-chai.use( chaiFs );
+chai.use( chaiFiles );
+var file = chaiFiles.file;
 var app = require( './index' );
 
 describe( 'Helper', function () {
@@ -22,7 +23,7 @@ describe( 'Helper', function () {
 	it( '<test> should resolve properly', function ( done ) {
 		app.build( 'default', function ( err ) {
 			expect( err ).to.not.exist;
-			expect( path.join( __dirname, './.build/test.md' ) ).to.have.content.that.match( /This is a test/ );
+			expect( file( path.join( __dirname, './.build/test.md' ) ) ).to.match( /This is a test/ );
 			done();
 		} );
 	} );
@@ -30,7 +31,7 @@ describe( 'Helper', function () {
 	it( '<if_q> should resolve properly if condition is true', function ( done ) {
 		app.build( 'default', function ( err ) {
 			expect( err ).to.not.exist;
-			expect( path.join( __dirname, './.build/if_eq.md' ) ).to.have.content.that.match( /a==a/ );
+			expect( file( path.join( __dirname, './.build/if_eq.md' ) ) ).to.match( /a==a/ );
 			done();
 		} );
 	} );
@@ -38,7 +39,7 @@ describe( 'Helper', function () {
 	it( '<if_q> should resolve properly if condition is false', function ( done ) {
 		app.build( 'default', function ( err ) {
 			expect( err ).to.not.exist;
-			expect( path.join( __dirname, './.build/if_eq_false.md' ) ).to.have.content.that.match( /a!=b/ );
+			expect( file( path.join( __dirname, './.build/if_eq_false.md' ) ) ).to.match( /a!=b/ );
 			done();
 		} );
 	} );

@@ -37,15 +37,15 @@ app.postWrite( /\.html/, function ( view, next ) {
 
 	if ( imagesExist ) {
 		var destPath = path.dirname( view.data.permalink );
-		fs.copy( path.join( sourcePath, 'images' ), path.join( destPath, 'images' ), function ( err ) {
+		return fs.copy( path.join( sourcePath, 'images' ), path.join( destPath, 'images' ), function ( err ) {
 			if ( err ) {
 				console.error( err );
 				return next( err );
 			}
-			next();
+			return next();
 		} );
 	} else {
-		next();
+		return next();
 	}
 } );
 

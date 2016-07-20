@@ -3,10 +3,8 @@
 var chai = require( 'chai' );
 var expect = chai.expect;
 var path = require( 'path' );
-var chaiFs = require( 'chai-fs' );
 var utils = require( './../lib/test-utils' );
 
-chai.use( chaiFs );
 var app = require( './index' );
 
 describe( 'Plugin Page-TOC', function () {

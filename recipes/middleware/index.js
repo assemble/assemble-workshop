@@ -34,9 +34,9 @@ app.postRender( /\.md/, function ( view, next ) {
 	next();
 } );
 
-app.postWrite( /\.md/, function (view, next) {
+app.postWrite( /\.md/, function ( view, next ) {
 	next();
-});
+} );
 
 app.task( 'default', function () {
 	return app.pages.src( path.join( __dirname, './content/**/*.{md,hbs}' ) )
