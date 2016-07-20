@@ -3,7 +3,7 @@
 var assemble = require( 'assemble' );
 var path = require( 'path' );
 var less = require( 'gulp-less' );
-var ext = require( 'gulp-ext' );
+var ext = require( 'gulp-extname' );
 var watch = require( 'base-watch' );
 var browserSync = require( 'browser-sync' ).create();
 var app = assemble();
@@ -50,7 +50,7 @@ app.task( 'rebuild', ['pages', 'assets'], function () {
 app.task( 'pages', ['init'], function () {
 	return app.src( 'src/pages/**/*.hbs', {layout: 'default'} )
 		.pipe( app.renderFile() )
-		.pipe( ext.replace( 'html' ) )
+		.pipe( ext()) 
 		.pipe( app.dest( 'wwwroot' ) )
 		.pipe( browserSync.stream() );
 } );
@@ -63,7 +63,7 @@ app.task( 'assets', ['js', 'css', 'bower'], function () {
 app.task( 'css', function () {
 	return app.src( 'src/assets/**/*.less' )
 		.pipe( less() )
-		.pipe( ext.replace( 'css' ) )
+		.pipe( ext())
 		.pipe( app.dest( 'wwwroot/assets/' ) )
 		.pipe( browserSync.stream() );
 } );

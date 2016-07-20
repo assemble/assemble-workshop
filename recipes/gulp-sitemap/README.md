@@ -12,7 +12,7 @@ Here is a simple example of generating some html files from handle bars (.hbs) f
 
 var app = require('assemble')();
 var path = require('path');
-var ext = require('gulp-ext');
+var ext = require('gulp-extname');
 
 app.option('layout', 'default');
 app.layouts(path.join(__dirname, 'src/layouts/**/*.hbs'));
@@ -22,7 +22,7 @@ app.task('default', function () {
     //Here we are using a gulp plugin to replace the .hbs ext with .html for all the pages.
     return app.src('src/pages/**/*.hbs', { layout: 'default' })
             .pipe(app.renderFile())
-            .pipe(ext.replace('html'))
+            .pipe(ext()))
             .pipe(app.dest('wwwroot'));
 });
 
@@ -45,7 +45,7 @@ the sitemap is created after the pages generated.
 
 var app = require('assemble')();
 var path = require('path');
-var ext = require('gulp-ext');
+var ext = require('gulp-extname');
 var sitemap = require('gulp-sitemap');
 
 app.option('layout', 'default');
@@ -56,7 +56,7 @@ app.task('pages', function () {
     //Here we are using a gulp plugin to replace the .hbs ext with .html for all the pages.
     return app.src('src/pages/**/*.hbs', { layout: 'default' })
             .pipe(app.renderFile())
-            .pipe(ext.replace('html'))
+            .pipe(ext())
             .pipe(app.dest('wwwroot'));
 });
 

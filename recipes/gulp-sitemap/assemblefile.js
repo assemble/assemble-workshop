@@ -2,7 +2,7 @@
 
 var app = require('assemble')();
 var path = require('path');
-var ext = require('gulp-ext');
+var ext = require('gulp-extname');
 var sitemap = require('gulp-sitemap');
 
 app.option('layout', 'default');
@@ -13,7 +13,7 @@ app.task('pages', function () {
     //Here we are using a gulp plugin to replace the .hbs ext with .html for all the pages.
     return app.src(path.join(__dirname, 'src/pages/**/*.hbs'), { layout: 'default' })
             .pipe(app.renderFile())
-            .pipe(ext.replace('html'))
+            .pipe(ext())
             .pipe(app.dest(path.join(__dirname, 'wwwroot')));
 });
 
