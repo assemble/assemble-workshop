@@ -1,6 +1,6 @@
 {
   "name": "assemble-workshop",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "description": "Some recipes using assemble v0.16.0.",
   "keywords": [
     "assemble",
