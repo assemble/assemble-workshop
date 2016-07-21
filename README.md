@@ -11,6 +11,7 @@ All recipes contain some explanation but also a fully working version of the rec
 - [Default layout](recipes/default-layout)
 - [Drafts](recipes/drafts)
 - [Less to CSS](recipes/less)
+- [Gulp Sitemap](recipes/gulp-sitemap)
 - [Loading handlebar helpers](recipes/loading-handlebar-helpers)
 - [Permalinks](recipes/permalinks)
 - [Permalinks - Folder per file](recipes/permalinks-folder-per-file)
