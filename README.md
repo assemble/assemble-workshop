@@ -10,7 +10,7 @@ All recipes contain some explanation but also a fully working version of the rec
 - [Working with collections](recipes/collection-basic)
 - [Default layout](recipes/default-layout)
 - [Drafts](recipes/drafts)
-- [Gulp sitempa](recipes/gulp-sitemap)
+- [Gulp sitemap](recipes/gulp-sitemap)
 - [Less to CSS](recipes/less)
 - [Loading handlebar helpers](recipes/loading-handlebar-helpers)
 - [Permalinks](recipes/permalinks)
