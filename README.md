@@ -1,6 +1,6 @@
-# Assemble recipes [![NPM version](https://img.shields.io/npm/v/assemble-workshop.svg?style=flat)](https://www.npmjs.com/package/assemble-workshop) [![Build Status](https://img.shields.io/travis/assemble/assemble-workshop.svg?style=flat)](https://travis-ci.org/assemble/assemble-workshop)
+# Assemble recipes [![NPM version](https://img.shields.io/npm/v/assemble-workshop.svg?style=flat)](https://www.npmjs.com/package/assemble-workshop) [![Build Status](https://img.shields.io/travis/Stefan%20Walther/assemble-workshop.svg?style=flat)](https://travis-ci.org/Stefan%20Walther/assemble-workshop)
 
-> Some recipes using assemble v0.12.0.
+> Some recipes using assemble v0.16.0.
 
 ## Recipes
 
@@ -28,7 +28,7 @@ $ npm install -d && npm test
 ```
 
 ## Contributing
-Pull requests and stars are always welcome. For bugs and feature requests, [please create an issue](https://github.com/assemble/assemble-workshop/issues/new).
+Pull requests and stars are always welcome. For bugs and feature requests, [please create an issue](../../issues/new).
 
 ## Author
 **Stefan Walther**
@@ -38,5 +38,6 @@ Pull requests and stars are always welcome. For bugs and feature requests, [plea
 * [github.com/stefanwalther](http://github.com/stefanwalther)
 
 ## License
-Copyright © 2016, [Stefan Walther](https://github.com/stefanwalther).
+Copyright © 2016, Stefan Walther.
 Released under the MIT license.
+
