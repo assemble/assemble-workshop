@@ -2,6 +2,7 @@
 var assemble = require( 'assemble' );
 var extname = require( 'gulp-extname' );
 var path = require( 'path' );
+var _ = require( 'lodash' );
 
 var app = assemble();
 
@@ -17,8 +18,8 @@ app.task( 'init', function ( cb ) {
 } );
 
 app.preRender( /./, function ( view, next ) {
-	view.data.articles = app.views.articles;
-	view.data.pages = app.views.pages;
+	view.data.articles = _.clone( app.views.articles );
+	view.data.pages = _.clone( app.views.pages );
 	next();
 } );
 
