@@ -24,8 +24,7 @@ describe( 'Collection Basic', function () {
 		utils.clean( delPath, cb );
 	} );
 
-	// Skipping test for now, getting the following error: "Uncaught Error: no writecb in Transform class"
-	xit( 'should succeed', function ( done ) {
+	it( 'should succeed', function ( done ) {
 		app.build( ['default'], function ( err ) {
 
 			expect( err ).to.not.exist;
