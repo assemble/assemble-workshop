@@ -4,8 +4,11 @@ var extname = require( 'gulp-extname' );
 var less = require( 'gulp-less' );
 var browserSync = require( 'browser-sync' ).create();
 var path = require( 'path' );
+var watch = require( 'base-watch' );
 
 var app = assemble();
+app.use( watch() );
+app.option( 'layout', 'default' );
 
 app.task( 'init', function ( cb ) {
 	app.helper( 'markdown', require( 'helper-markdown' ) );
